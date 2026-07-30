@@ -1,114 +1,61 @@
 @media (max-width: 1100px) {
-  .shell {
-    width: min(var(--max), calc(100% - 40px));
-  }
-  .brand img {
-    width: 265px;
-  }
-  .hero,
-  .signup,
-  .validation {
-    grid-template-columns: 1fr;
-  }
-  .hero {
-    gap: 32px;
-  }
-  h1 {
-    font-size: 3.5rem;
-  }
-  .hero-media,
-  .hero-media img {
-    min-height: 400px;
-  }
-  .feature-grid,
-  .principles {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .chips {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-  .principles {
-    row-gap: 20px;
-  }
-  .principles div:nth-child(2) {
-    border-right: 0;
-  }
+  .shell { width: min(var(--max), calc(100% - 40px)); }
+  .brand img { width: 265px; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-copy { order: 1; }
+  .hero-media { order: 2; min-height: 400px; }
+  .hero-media img { min-height: 400px; }
+  .feature-grid { grid-template-columns: repeat(2, 1fr); }
+  .signup { grid-template-columns: 1fr; }
+  .validation { grid-template-columns: 1fr; }
+  .chips { grid-template-columns: repeat(3, 1fr); }
+  .benefits { grid-template-columns: repeat(2, 1fr); row-gap: 20px; }
+  .benefit:nth-child(2) { border-right: 0; }
 }
+
 @media (max-width: 720px) {
-  .shell {
-    width: min(var(--max), calc(100% - 28px));
-  }
-  .site-header {
-    align-items: flex-start;
-    padding-top: 18px;
-  }
-  .brand img {
-    width: 220px;
-  }
-  .email-link {
-    font-size: 0.85rem;
-  }
-  .hero {
-    gap: 22px;
-    padding-top: 12px;
-    padding-bottom: 30px;
-  }
-  h1 {
-    font-size: 2.55rem;
-  }
-  .intro {
-    margin-top: 16px;
-    font-size: 1.05rem;
-  }
-  .hero-media,
-  .hero-media img {
-    min-height: 280px;
-  }
-  .feature-grid,
-  .signup-form,
-  .principles {
-    grid-template-columns: 1fr;
-  }
-  .signup button {
-    width: 100%;
-  }
-  .chips {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .principles div,
-  .principles div:first-child,
-  .principles div:last-child {
-    padding: 14px 0;
+  .shell { width: min(var(--max), calc(100% - 28px)); }
+  header { align-items: flex-start; padding-top: 18px; }
+  .brand img { width: 220px; }
+  .email-link { font-size: 0; }
+  .email-icon { width: 23px; height: 23px; }
+  .hero { gap: 22px; padding-top: 12px; padding-bottom: 30px; }
+  h1 { font-size: clamp(38px, 12vw, 56px); }
+  .eyebrow { font-size: 14px; }
+  .intro { font-size: 17px; margin-top: 16px; }
+  .hero-media { min-height: 280px; border-radius: 16px; }
+  .hero-media img { min-height: 280px; }
+  .hero-badge { left: 14px; right: 14px; bottom: 14px; }
+  .trust-card { padding: 16px 18px; }
+  .feature-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .feature { padding: 18px 16px; }
+  .signup { padding: 20px; gap: 18px; }
+  .signup-copy { grid-template-columns: 52px minmax(0, 1fr); gap: 14px; }
+  .signup-envelope { width: 52px; height: 52px; }
+  .signup-envelope svg { width: 25px; height: 25px; }
+  .signup-form { grid-template-columns: 1fr; }
+  .signup button { width: 100%; }
+  .validation-card { padding: 22px; }
+  .chips { grid-template-columns: repeat(2, 1fr); }
+  .benefits { grid-template-columns: 1fr; padding-bottom: 12px; }
+  .benefit,
+  .benefit:first-child,
+  .benefit:nth-child(3),
+  .benefit:last-child {
+    padding: 14px 0 14px 46px;
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
-  .principles div:last-child {
-    border-bottom: 0;
-  }
+  .benefit:last-child { border-bottom: 0; }
 }
+
 @media (max-width: 480px) {
-  .shell {
-    width: min(var(--max), calc(100% - 22px));
-  }
-  .brand img {
-    width: 190px;
-  }
-  .site-header {
-    gap: 12px;
-  }
-  .email-link {
-    max-width: 138px;
-    overflow-wrap: anywhere;
-    text-align: right;
-  }
-  h1 {
-    font-size: 2.25rem;
-  }
-  .hero-media,
-  .hero-media img {
-    min-height: 235px;
-  }
-  .chips {
-    grid-template-columns: 1fr;
-  }
+  .shell { width: min(var(--max), calc(100% - 22px)); }
+  .brand img { width: 190px; }
+  .feature-grid { grid-template-columns: 1fr; }
+  .chips { grid-template-columns: 1fr; }
+  .hero-media { min-height: 235px; }
+  .hero-media img { min-height: 235px; }
+  .hero-badge { position: static; border-radius: 0; max-width: none; }
+  .signup-copy h2 { font-size: 21px; }
 }

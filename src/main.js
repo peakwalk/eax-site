@@ -1,8 +1,12 @@
-const form = document.getElementById('founding-supplier-form');
+const form =
+  document.getElementById('early-access-form') ||
+  document.getElementById('founding-supplier-form');
 const email = document.getElementById('business-email');
 const honeypot = document.getElementById('website');
 const status = document.getElementById('form-status');
-const submitButton = document.getElementById('founding-supplier-submit');
+const submitButton =
+  document.getElementById('founding-supplier-submit') ||
+  form?.querySelector('button[type="submit"]');
 const defaultSubmitLabel = submitButton?.textContent || 'Become a Founding Supplier';
 
 function runtimeConfig() {
@@ -119,7 +123,7 @@ if (form) {
     try {
       await submitRequest(buildPayload(emailValue));
       form.reset();
-      setStatus('Thank you. We will contact you about becoming a founding supplier.', 'success');
+      setStatus('Thank you — we’ll contact you about becoming a founding supplier.', 'success');
     } catch (error) {
       setStatus(
         error instanceof Error && error.message
