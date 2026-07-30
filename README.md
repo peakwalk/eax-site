@@ -17,13 +17,13 @@ The production build is written to `public/`.
 
 The `Become a Founding Supplier` form posts JSON to a public backend endpoint. The static page does not call Listmonk directly, because Listmonk API credentials must stay server-side.
 
-Set one of these build-time variables in GitHub Actions or locally before `npm run build`:
+Set this build-time variable in GitHub Actions or locally before `npm run build`:
 
 ```sh
 EAX_FOUNDING_SUPPLIER_API_URL=https://example.com/api/public/early-access-requests
 ```
 
-If `EAX_FOUNDING_SUPPLIER_API_URL` is not set, the page falls back to `/api/public/early-access-requests`, matching the OAE public-site proxy route shape.
+For production, this URL must be a public relay/API endpoint that owns the server-side Listmonk credentials. If it is not set, the form shows a safe fallback message asking the user to email the team.
 
 More detail is in `docs/listmonk-integration.md`.
 

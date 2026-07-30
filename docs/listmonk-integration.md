@@ -17,7 +17,9 @@ In the backend, the public route validates the request, records it in `early_acc
 - The payload uses `source: "eax-site"` and `requestType: "founding-supplier"`.
 - Listmonk credentials and template IDs stay in the backend.
 
-This can target the existing OAE-style endpoint if the backend accepts the `founding-supplier` request type. Otherwise, create a thin public backend route for EAX that accepts the same JSON payload and then creates or sends the appropriate Listmonk transaction server-side.
+This can target an OAE-style endpoint if a public relay adds the required server-side secret and the backend accepts the `founding-supplier` request type. The static GitHub Pages site should not call the protected OAE Supabase route directly, because that route requires `X-Public-Proxy-Secret`.
+
+If no compatible relay exists, create a thin public backend route for EAX that accepts the same JSON payload and then creates or sends the appropriate Listmonk transaction server-side.
 
 ## Expected request payload
 

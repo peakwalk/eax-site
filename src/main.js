@@ -20,8 +20,7 @@ function resolveApiUrl() {
   return (
     clean(config.FOUNDING_SUPPLIER_API_URL) ||
     clean(config.EARLY_ACCESS_API_URL) ||
-    clean(form?.getAttribute('data-api-endpoint')) ||
-    '/api/public/early-access-requests'
+    clean(form?.getAttribute('data-api-endpoint'))
   );
 }
 
@@ -79,7 +78,14 @@ function buildPayload(emailValue) {
 }
 
 async function submitRequest(payload) {
-  const response = await fetch(resolveApiUrl(), {
+  const apiUrl = resolveApiUrl();
+  if (!apiUrl) {
+    throw new Error(
+      'This form is not connected yet. Please email matt@eaxmarketplace.com.',
+    );
+  }
+
+  const response = await fetch(apiUrl, {
     body: JSON.stringify(payload),
     headers: {
       Accept: 'application/json',
