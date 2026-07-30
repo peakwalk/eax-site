@@ -1,0 +1,6 @@
+node_modules/
+.parcel-cache/
+public/
+src/generated/
+.DS_Store
+npm-debug.log*

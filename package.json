@@ -1,0 +1,22 @@
+{
+  "name": "eax-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static EAX Marketplace website built with Parcel for GitHub Pages.",
+  "scripts": {
+    "clean": "node scripts/clean-public.js",
+    "write:runtime-config": "node scripts/write-runtime-config.js",
+    "copy:static": "node scripts/copy-static.js",
+    "check:loc": "node scripts/check-source-lines.js",
+    "test": "npm run check:loc",
+    "dev": "npm run write:runtime-config && parcel serve src/index.html --dist-dir public --port 1234",
+    "prebuild": "npm run clean",
+    "build": "npm run check:loc && npm run write:runtime-config && parcel build src/index.html --dist-dir public --public-url . --no-source-maps",
+    "postbuild": "npm run copy:static"
+  },
+  "devDependencies": {
+    "@parcel/packager-raw-url": "^2.16.4",
+    "@parcel/transformer-jsonld": "^2.16.4",
+    "parcel": "^2.16.3"
+  }
+}

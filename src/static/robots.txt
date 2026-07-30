@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eaxmarketplace.com/sitemap.xml
+
+# Optional: block system folders if they exist
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
