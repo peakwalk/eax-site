@@ -8,6 +8,7 @@ const submitButton =
   document.getElementById('founding-supplier-submit') ||
   form?.querySelector('button[type="submit"]');
 const defaultSubmitLabel = submitButton?.textContent || 'Become a Founding Supplier';
+const isSubmitDisabled = form?.dataset.submitDisabled === 'true';
 
 function runtimeConfig() {
   return window.__EAX_RUNTIME_CONFIG__ && typeof window.__EAX_RUNTIME_CONFIG__ === 'object'
@@ -52,7 +53,7 @@ function setSubmitting(isSubmitting) {
   if (!submitButton || !email) {
     return;
   }
-  submitButton.disabled = isSubmitting;
+  submitButton.disabled = isSubmitDisabled || isSubmitting;
   submitButton.textContent = isSubmitting ? 'Submitting...' : defaultSubmitLabel;
   email.disabled = isSubmitting;
 }
@@ -111,6 +112,11 @@ if (form) {
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     setStatus('', '');
+
+    if (isSubmitDisabled) {
+      setStatus('Supplier registration will open soon.', 'info');
+      return;
+    }
 
     const emailValue = validateEmail();
     if (!emailValue) {

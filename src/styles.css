@@ -249,6 +249,11 @@ h1 {
   box-shadow: 0 10px 22px rgba(20, 85, 245, 0.22);
   white-space: nowrap;
 }
+.signup button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+}
 .privacy { margin: 8px 0 0; color: #68758a; font-size: 12.5px; }
 .status { grid-column: 1 / -1; margin: 8px 0 0; color: var(--success); font-size: 13px; min-height: 18px; }
 .status[data-tone="error"] { color: var(--error); }
