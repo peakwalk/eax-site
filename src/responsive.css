@@ -41,6 +41,7 @@
   .hub-intro h2 { margin-bottom: 8px; font-size: 23px; }
   .category-links,
   .category-grid,
+  .hub-copy,
   .use-grid,
   .hub-cta { grid-template-columns: 1fr; }
   .hub-cta a { width: 100%; }
