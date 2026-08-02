@@ -14,6 +14,7 @@ In the backend, the public route validates the request, records it in `early_acc
 
 - The browser submits only public request data.
 - The endpoint is configured with `EAX_FOUNDING_SUPPLIER_API_URL`.
+- The committed default endpoint is `https://eax-email-relay.peakwalk.tech/api/public/founding-supplier-requests`.
 - The payload uses `source: "eax-site"` and `requestType: "founding-supplier"`.
 - Listmonk credentials and template IDs stay in the backend.
 

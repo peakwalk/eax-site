@@ -20,10 +20,10 @@ The `Become a Founding Supplier` form posts JSON to a public backend endpoint. T
 Set this build-time variable in GitHub Actions or locally before `npm run build`:
 
 ```sh
-EAX_FOUNDING_SUPPLIER_API_URL=https://example.com/api/public/early-access-requests
+EAX_FOUNDING_SUPPLIER_API_URL=https://eax-email-relay.peakwalk.tech/api/public/founding-supplier-requests
 ```
 
-For production, this URL must be a public relay/API endpoint that owns the server-side Listmonk credentials. If it is not set, the form shows a safe fallback message asking the user to email the team.
+The committed page also has the EAX relay URL as its default form endpoint, so the GitHub Pages build works even if this variable is not set. Keep using the variable when a build needs to point at another relay/API endpoint. The static page never calls Listmonk directly, because Listmonk API credentials must stay server-side.
 
 More detail is in `docs/listmonk-integration.md`.
 
