@@ -1,10 +1,17 @@
 @media (max-width: 1100px) {
   .shell { width: min(var(--max), calc(100% - 40px)); }
   .brand img { width: 265px; }
+  header { flex-wrap: wrap; }
+  .site-nav { order: 3; width: 100%; justify-content: flex-start; }
   .hero { grid-template-columns: 1fr; }
   .hero-copy { order: 1; }
   .hero-media { order: 2; min-height: 400px; }
   .hero-media img { min-height: 400px; }
+  .hub-hero { grid-template-columns: 1fr; }
+  .hub-media { min-height: 320px; }
+  .hub-media img { min-height: 320px; }
+  .category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .use-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .feature-grid { grid-template-columns: repeat(2, 1fr); }
   .signup { grid-template-columns: 1fr; }
   .validation { grid-template-columns: 1fr; }
@@ -17,14 +24,26 @@
   .shell { width: min(var(--max), calc(100% - 28px)); }
   header { align-items: flex-start; padding-top: 18px; }
   .brand img { width: 220px; }
+  .site-nav { gap: 4px; }
+  .site-nav a { padding: 8px 9px; font-size: 13px; }
   .email-link { font-size: 0; }
   .email-icon { width: 23px; height: 23px; }
   .hero { gap: 22px; padding-top: 12px; padding-bottom: 30px; }
+  .hub-hero { gap: 22px; padding-top: 12px; }
   h1 { font-size: clamp(38px, 12vw, 56px); }
   .eyebrow { font-size: 14px; }
   .intro { font-size: 17px; margin-top: 16px; }
   .hero-media { min-height: 280px; border-radius: 16px; }
   .hero-media img { min-height: 280px; }
+  .hub-media { min-height: 240px; border-radius: 16px; }
+  .hub-media img { min-height: 240px; }
+  .hub-intro { display: block; }
+  .hub-intro h2 { margin-bottom: 8px; font-size: 23px; }
+  .category-links,
+  .category-grid,
+  .use-grid,
+  .hub-cta { grid-template-columns: 1fr; }
+  .hub-cta a { width: 100%; }
   .hero-badge { left: 14px; right: 14px; bottom: 14px; }
   .trust-card { padding: 16px 18px; }
   .feature-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -52,6 +71,8 @@
 @media (max-width: 480px) {
   .shell { width: min(var(--max), calc(100% - 22px)); }
   .brand img { width: 190px; }
+  .site-nav { align-items: stretch; width: 100%; }
+  .site-nav a { flex: 1 1 auto; text-align: center; }
   .feature-grid { grid-template-columns: 1fr; }
   .chips { grid-template-columns: 1fr; }
   .hero-media { min-height: 235px; }

@@ -82,6 +82,16 @@ function buildPayload(emailValue) {
   };
 }
 
+function trackLeadEvent() {
+  if (typeof window.gtag !== 'function') {
+    return;
+  }
+  window.gtag('event', 'generate_lead', {
+    form_name: 'founding_supplier',
+    source: 'eax-site',
+  });
+}
+
 async function submitRequest(payload) {
   const apiUrl = resolveApiUrl();
   if (!apiUrl) {
@@ -128,6 +138,7 @@ if (form) {
 
     try {
       await submitRequest(buildPayload(emailValue));
+      trackLeadEvent();
       form.reset();
       setStatus('Thank you — we’ll contact you about becoming a founding supplier.', 'success');
     } catch (error) {

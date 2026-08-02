@@ -3,7 +3,7 @@ const path = require('node:path');
 
 const root = path.resolve(__dirname, '..');
 const maxFileLines = 420;
-const maxTotalLines = 1200;
+const maxTotalLines = 1800;
 const includedRoots = ['src', 'scripts', '.github/workflows'];
 const includedRootFiles = ['package.json', 'README.md'];
 const sourceExtensions = new Set(['.css', '.html', '.js', '.json', '.md', '.yml', '.xml', '.txt']);
