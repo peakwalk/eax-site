@@ -2,7 +2,6 @@ const form =
   document.getElementById('early-access-form') ||
   document.getElementById('founding-supplier-form');
 const email = document.getElementById('business-email');
-const honeypot = document.getElementById('website');
 const status = document.getElementById('form-status');
 const submitButton =
   document.getElementById('founding-supplier-submit') ||
@@ -78,8 +77,14 @@ function buildPayload(emailValue) {
     pageUrl: window.location.href,
     requestType: 'founding-supplier',
     source: 'eax-site',
-    website: clean(honeypot?.value),
   };
+}
+
+function successMessage(result) {
+  if (result?.skipped === 'cooldown') {
+    return 'Thank you — we already have your request and will contact you soon.';
+  }
+  return 'Thank you — we received your request. Please check your inbox for confirmation.';
 }
 
 function trackLeadEvent() {
@@ -137,10 +142,10 @@ if (form) {
     setStatus('Submitting your request...', 'info');
 
     try {
-      await submitRequest(buildPayload(emailValue));
+      const result = await submitRequest(buildPayload(emailValue));
       trackLeadEvent();
       form.reset();
-      setStatus('Thank you — we’ll contact you about becoming a founding supplier.', 'success');
+      setStatus(successMessage(result), 'success');
     } catch (error) {
       setStatus(
         error instanceof Error && error.message
