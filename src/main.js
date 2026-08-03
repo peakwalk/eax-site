@@ -84,7 +84,7 @@ function successMessage(result) {
   if (result?.skipped === 'cooldown') {
     return 'Thank you — we already have your request and will contact you soon.';
   }
-  return 'Thank you — we received your request. Please check your inbox for confirmation.';
+  return 'Thank you — we received your request and will contact you soon.';
 }
 
 function trackLeadEvent() {
