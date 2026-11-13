@@ -183,25 +183,6 @@ h1 {
 .feature h3 { margin: 0 0 8px; color: var(--navy-2); font-size: 16px; }
 .feature p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
 
-.partnership a {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 4px 24px;
-  padding: 6px 16px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  color: var(--muted);
-  text-align: center;
-  text-decoration: none;
-}
-.partnership a:hover { border-color: var(--blue); }
-.partnership a:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
-.partnership p { margin: 0; }
-.partnership img { width: 280px; height: auto; }
-.partnership + .signup { margin-top: 18px; }
-
 .signup {
   margin: 28px 0 22px;
   padding: 28px;
